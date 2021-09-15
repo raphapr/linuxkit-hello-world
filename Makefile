@@ -1,10 +1,10 @@
 clean:
-	rm -rf example.raw-state; rm -rf example.raw
+	rm -rf nginx.raw-state; rm -rf nginx.raw
 
 build: clean
-	linuxkit build -disable-content-trust -format aws -name example example.yml
+	linuxkit build -disable-content-trust -format aws -name nginx nginx.yml
 
 run-only:
-	linuxkit run qemu example.raw
+	linuxkit run qemu nginx.raw
 
 run: build run-only
